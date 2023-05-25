@@ -4,6 +4,20 @@
 a. function reverseString(str = "") {
     return str.split("").reverse().join("")
    }
+Reverse words (the sky  is blue)
+const reverseWord = (str)=>{
+    let strArray = str.split(" ");
+    let reverse_str = "";
+    
+    for(let i = strArray.length - 1; i >=0; i--) {
+        if (strArray[i] == "") continue;
+        if (reverse_str.length > 0) reverse_str += " ";
+        reverse_str += strArray[i];
+        
+    }
+    return reverse_str;
+    
+}
 
 b.
 function reverseString(str = "")  {
