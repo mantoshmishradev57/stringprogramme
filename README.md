@@ -18,6 +18,10 @@ const reverseWord = (str)=>{
     return reverse_str;
     
 }
+//Length of Last Word
+lengthOfLastWord = (str) => {
+    return str.split(" ").filter(x => x.length !==0).pop().length
+}
 
 b.
 function reverseString(str = "")  {
