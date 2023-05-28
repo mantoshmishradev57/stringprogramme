@@ -22,6 +22,50 @@ const reverseWord = (str)=>{
 lengthOfLastWord = (str) => {
     return str.split(" ").filter(x => x.length !==0).pop().length
 }
+//Is Valid Paranthesis
+ const isValidParanthesis = (str) => {
+    let stack = [];
+    for(let i = 0; i<str.length; i++ ) {
+        if (str[i] === "(" || str[i] === "{"  || str[i] === "[")
+        {
+            stack.unshift(str[i])
+        }
+        else {
+            ///(///
+            if (str[i] === ")") {
+                if (stack[0] == "("){
+                    stack.shift();
+                    continue
+                }
+                   else { return false}
+            }
+         
+            
+              ///{///
+            if (str[i] === "}") {
+                if (stack[0] == "{"){
+                    stack.shift();
+                    continue
+                }
+                  else { return false}
+            }
+          
+            
+                    ///[///
+            if (str[i] === "]") {
+                if (stack[0] == "["){
+                    stack.shift();
+                    continue
+                }
+                     else { return false}
+            }
+        }
+            
+    }
+    if(stack.length >0){ return false}
+    else {return true}
+        
+}
 
 b.
 function reverseString(str = "")  {
