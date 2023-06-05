@@ -97,6 +97,31 @@ else
 s = ""
 }
 
+const pintFizzBuzz = (num) => {
+    
+    let arrayList = [];
+    
+    for (let i = 1; i <= num; i++) {
+        if((i%3 == 0) && (i%5 == 0))
+        {
+            arrayList.push("FizzBuzz")
+            continue;
+        }
+       if ((i%3 == 0))
+       {
+              arrayList.push("Fizz")
+                   continue;
+        }
+        if ((i%5 == 0))
+        {
+              arrayList.push("Buzz")
+                   continue;
+        }
+           arrayList.push(i+"")
+    }
+    
+    return arrayList
+}
 3.Reverse a string without affecting special characters
 
 1. Let input string be 'str[]' and length of string be 'n'
