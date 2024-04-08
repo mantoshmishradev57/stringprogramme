@@ -279,3 +279,62 @@ let str = "asdfsdafdasfjdfsafnnunl";
  
 // Function Call
 firstNonRepElement(str);
+
+9. Print Pattern
+* 
+* * 
+* * * 
+* * * * 
+* * * * *
+    const printPattern = (n)=>{
+    for(let i = 0; i<n; i++) {
+        let str = "*";
+        console.log(str.repeat(i))
+    }
+}
+
+console.log(printPattern(5));
+
+
+        * 
+      * * 
+    * * * 
+  * * * * 
+* * * * * 
+const printPattern = (n)=>{
+    for(let i = 1; i <= n; i++) {
+         let str = "* ";
+         let space  = '  ';
+        console.log(space.repeat((n-i))+str.repeat(i))
+    }
+}
+
+
+* * * * * 
+* * * * 
+* * * 
+* * 
+*
+
+        const printPattern = (n)=>{
+    for(let i = 0; i <= n; i++) {
+         let str = "* ";
+         let space  = '  ';
+        console.log(str.repeat(n-i))
+    }
+}
+
+* * * * * 
+  * * * * 
+    * * * 
+      * * 
+        * 
+
+        const printPattern = (n)=>{
+    for(let i = 0; i <= n; i++) {
+         let str = "* ";
+         let space  = '  ';
+        console.log(space.repeat(i)+str.repeat(n-i))
+    }
+}
+
