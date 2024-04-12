@@ -370,4 +370,11 @@ for (let i = n; i >= 1; i--) {
     console.log(space.repeat((n - i)) + str.repeat(i * 2 - 1)); 
 }
 }
-        
+    10. Reverse Words in Sentence.    
+let str = "Online Javascript Editor for free";
+
+const reverseWords = (strV)=>{
+    const arrStr = strV.split(" ");
+    return arrStr.map(e=> e.split("").reverse().join("")).join(" ")
+}
+// Output: enilnO tpircsavaJ rotidE rof eerf
