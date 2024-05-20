@@ -18,6 +18,17 @@ const reverseWord = (str)=>{
     return reverse_str;
     
 }
+//const reverseWord = (str)=> {
+    if(str.length <= 0) return "";
+    
+    let reversedStr = "";
+    let splittedArray = str.trim().split(" ");
+    let arrayCount = splittedArray.length;
+    for(let i = arrayCount - 1; i >=0; i--) {
+        reversedStr += splittedArray[i] + " "
+    }
+    return reversedStr; 
+}
 //Length of Last Word
 lengthOfLastWord = (str) => {
     return str.split(" ").filter(x => x.length !==0).pop().length
