@@ -33,6 +33,13 @@ const reverseWord = (str)=>{
 lengthOfLastWord = (str) => {
     return str.split(" ").filter(x => x.length !==0).pop().length
 }
+const reverseOnlyWordfromSentence = (arr)=>{
+ const splitted = arr.split(" ");
+ const mappedItem = splitted.map(e=> e.split("").reverse().join(""))
+ return mappedItem.join(" ")
+}
+
+console.log(reverseOnlyWordfromSentence("This is Java code")) //sihT si avaJ edoc
 //Is Valid Paranthesis
  const isValidParanthesis = (str) => {
     let stack = [];
