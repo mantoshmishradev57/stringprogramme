@@ -40,6 +40,23 @@ const reverseOnlyWordfromSentence = (arr)=>{
 }
 
 console.log(reverseOnlyWordfromSentence("This is Java code")) //sihT si avaJ edoc
+
+const getMaxOccurringChar = (str) =>{
+    let obj ={};
+    for(let char of str){
+        obj[char] = (obj[char]  || 0 ) + 1
+    }
+    let maxChar = '';
+    let maxCount = 0;
+    for(let char in obj){
+          if(obj[char] > maxCount){
+              maxCount = obj[char]
+              maxChar = char
+          }
+    }
+   return {"char":maxChar, totalCount: maxCount};
+}
+console.log(getMaxOccurringChar("Try programiz pro")) ////{ char: 'r', totalCount: 4 }
 //Is Valid Paranthesis
  const isValidParanthesis = (str) => {
     let stack = [];
