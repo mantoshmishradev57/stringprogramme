@@ -413,3 +413,137 @@ const reverseWords = (strV)=>{
     return arrStr.map(e=> e.split("").reverse().join("")).join(" ")
 }
 // Output: enilnO tpircsavaJ rotidE rof eerf
+
+const areAngram = (str1, str2)=> {
+    
+    const firstStr = str1.replace(/\s+/g,'').toLowerCase();
+    const secondStr = str2.replace(/\s+/g,'').toLowerCase()
+    
+    if(firstStr.length !== secondStr.length) return false;
+    
+    return firstStr.split('').sort().join('') == secondStr.split('').sort().join('')
+}
+
+console.log(areAngram("listen", "silent"));
+console.log(areAngram("hello", "world"));
+
+const removeDuplicateFromString = (str)=> {
+    return [... new Set(str)].join('')
+}
+
+console.log(removeDuplicateFromString('aabbccddeeff'));
+
+function removeDuplicates(str) {
+    let seen = {};  // Object to track the characters we've encountered
+    let result = '';
+
+    for (let char of str) {
+        if (!seen[char]) {  // Check if the character has been seen
+            seen[char] = true;  // Mark this character as seen
+            result += char;  // Append it to the result string
+        }
+    }
+
+    return result;
+}
+
+const result = removeDuplicates('aabbccddeeff');
+console.log(result); // Output: 'abcdef'
+
+how you can count the number of palindromes in a string using JavaScript:
+
+const isPalindrom = (str) => {
+  return  str == str.split("").reverse().join("")
+}
+
+const countPalindrom = (str) => {
+    let palindromCount = 0;
+     const n = str.length;
+    for(let i = 0; i<n; i++){
+        for(let j = i+1 ; j<=n; j++){
+            const subStr = str.slice(i,j);
+            if(isPalindrom(subStr)){
+               palindromCount ++ 
+            }
+        }
+    }
+    
+    return palindromCount;
+}
+
+console.log(countPalindrom('abcba'));
+
+
+Longest Palindromic Subsequence
+
+
+const isPalindrom = (str) => {
+  return  str == str.split("").reverse().join("")
+}
+
+const countPalindrom = (str) => {
+    let palindromCount = 0;
+    let obj = {};
+     const n = str.length;
+    for(let i = 0; i<n; i++) {
+        for(let j = i+1 ; j<=n; j++){
+            const subStr = str.slice(i,j);
+            if(isPalindrom(subStr)){
+                obj[subStr] =   subStr.length
+               palindromCount ++ 
+            }
+        }
+    }
+    console.log(obj)
+    let maxKey = '';
+    let maxValue = -Infinity;
+    for (let k in obj) {
+        if(obj[k] > maxValue)
+        {
+            maxValue = obj[k]
+            maxKey = k
+        }
+    }
+    console.log(`Longest palindrom Value maxKey:${maxKey} maxValue:${maxValue}`)
+    return palindromCount;
+}
+
+console.log(countPalindrom('abcba'));
+
+
+const returnOccuranceOfString = (str) => {
+    let obj = {};
+    for(let char of str){
+       obj[char] =  obj[char] ? obj[char] + 1 : 1
+    }
+    return Object.entries(obj).map(([k,v])=> v == 1 ? `${k}`: `${k}${v}`).join('');
+}
+
+console.log(returnOccuranceOfString("abaaccdeefgfhfkf"));
+
+
+
+const findLongestWord = (str)=> {
+    return str.split(' ').reduce((longest, word) => word.length > longest.length ? word : longest, '')
+}
+
+console.log(findLongestWord("Try programiz pro"));
+
+
+const capatilizeFirstCharacterOfWord = (str) => {
+    return str.
+    split(' ').
+    map(e => e.charAt(0).toUpperCase() + e.slice(1).toLowerCase()).
+    join(' ')
+}
+
+console.log(capatilizeFirstCharacterOfWord("Try programiz pro"));
+
+const isInteger = (c) => {
+    return /^-?\d+$/.test(c)
+}
+
+
+const isAlphabet = (c) => {
+    return /^[a-zA-Z\s]+$/.test(c)
+}
